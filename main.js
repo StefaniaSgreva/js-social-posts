@@ -72,9 +72,11 @@ Ogni post dovrà avere le informazioni necessarie per stampare la relativa card:
 *Per le immagini va bene utilizzare qualsiasi servizio di placeholder ad es. Unsplash (https://unsplash.it/300/300?image=<id>)
 Milestone 2 - Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i post del nostro feed.s*/ 
 
+//VARIABILI
 const postContainer = document.getElementById('container');
-
-
+//ARRAY PER I LIKED POSTS +/-
+let likedPosts = [];
+// LOOP PRINT-->DOM (POSTS)
 for(let i = 0; i < posts.length; i++){
     const element = posts[i];
     const postTemplate = ` 
@@ -117,11 +119,12 @@ for(let i = 0; i < posts.length; i++){
 - Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
 -Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.*/ 
 
+//LIKE-DISLIKE
 const likeBtn = document.querySelectorAll('.js-like-button');
 let likes = document.querySelectorAll('.js-likes-counter');
 
 for (let i = 0; i < posts.length; i++){
-    const likedPosts = [];
+    
 
     likeBtn[i].addEventListener('click', function(){
         likeBtn[i].classList.toggle('like-button--liked');
@@ -135,3 +138,4 @@ for (let i = 0; i < posts.length; i++){
         console.log(likedPosts);
     });
 }
+
