@@ -112,3 +112,26 @@ for(let i = 0; i < posts.length; i++){
 
     postContainer.innerHTML += postTemplate;
 }
+
+/*Milestone 3
+- Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
+-Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.*/ 
+
+const likeBtn = document.querySelectorAll('.js-like-button');
+let likes = document.querySelectorAll('.js-likes-counter');
+
+for (let i = 0; i < posts.length; i++){
+    const likedPosts = [];
+
+    likeBtn[i].addEventListener('click', function(){
+        likeBtn[i].classList.toggle('like-button--liked');
+        if(likeBtn[i].classList.contains('like-button--liked') === true){
+            likes[i].innerHTML = posts[i].likes += 1;
+            likedPosts.push(posts[i].id);
+        } else{
+            likes[i].innerHTML = posts[i].likes -= 1;
+            likedPosts.
+        }
+        console.log(likedPosts);
+    });
+}
