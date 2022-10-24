@@ -130,7 +130,7 @@ for (let i = 0; i < posts.length; i++){
             likedPosts.push(posts[i].id);
         } else{
             likes[i].innerHTML = posts[i].likes -= 1;
-            likedPosts.
+            likedPosts.splice(this[i], 1)
         }
         console.log(likedPosts);
     });
